@@ -23,4 +23,4 @@ If you have a chain of three `.then()` calls followed by a single `.catch()`, an
 
 **Your Answer:**
 
-If there is a chain of three `.then()` calls followed by a single `.catch()`, and the second `.then()` throws an error, the third `.then()` is skipped and the `.catch()` is executed. This behavior is useful because instead of needing error handling at each step(callback hell), one `.catch()` acts as a safety net for the entire chain, hence the reason for the name of the `method .catch()`. This stops the program from crashing.
+If there is a chain of three `.then()` calls followed by a single `.catch()`, and the second `.then()` throws an error, the third `.then()` is skipped and the `.catch()` is executed. This behavior is useful because instead of needing error handling at each step(callback hell), one `.catch()` acts as a `"catch"`, or safety net for the entire chain. This stops the program from crashing.
