@@ -68,6 +68,19 @@ const readFileSequentially = () => {
 // - Use .then() to join the parts after Promise.all resolves
 // - Don't forget .catch() for error handling!
 const readFilesParallel = () => {
+  const promises = [
+    fs.readFile(getPath('story-part-1.txt'), 'utf-8'),
+    fs.readFile(getPath('story-part-2.txt'), 'utf-8'),
+    fs.readFile(getPath('story-part-3.txt'), 'utf-8'),
+    fs.readFile(getPath('story-part-4.txt'), 'utf-8'),
+  ];
+  return Promise.all(promises)
+  .then((results) => {
+    return results.join('\n')
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 };
 
 module.exports = {
